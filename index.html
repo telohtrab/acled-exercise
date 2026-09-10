@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Data Center Backlash | ACLED Data Story</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #274d70;
+    --navy-dark: #1a334a;
+    --orange: #fdae36;
+    --ink: #1a1a1a;
+    --grey-text: #4a4a4a;
+    --grey-line: #e0e0e0;
+    --bg: #ffffff;
+    --bg-offwhite: #f7f8f9;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    font-family: 'Lato', 'Source Sans Pro', Verdana, sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.6;
+  }
+
+  header.site-header {
+    background: var(--navy);
+    padding: 44px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  header.site-header img {
+    height: 52px;
+  }
+
+  header.site-header .kicker {
+    color: var(--orange);
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  main {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .hero {
+    padding: 56px 0 32px;
+    border-bottom: 1px solid var(--grey-line);
+  }
+
+  .hero .kicker {
+    color: var(--navy);
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  h1 {
+    font-size: 2.4rem;
+    font-weight: 900;
+    line-height: 1.15;
+    color: var(--navy-dark);
+    margin: 0 0 18px;
+  }
+
+  .dek {
+    font-size: 1.25rem;
+    color: var(--grey-text);
+    font-weight: 400;
+    max-width: 720px;
+    margin: 0 0 8px;
+  }
+
+  .byline {
+    font-size: 0.85rem;
+    color: var(--grey-text);
+    margin-top: 20px;
+  }
+
+  section.block {
+    padding: 48px 0;
+    border-bottom: 1px solid var(--grey-line);
+  }
+
+  section.block:last-of-type {
+    border-bottom: none;
+  }
+
+  section.block h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--navy-dark);
+    margin: 0 0 8px;
+  }
+
+  section.block .subtitle {
+    font-size: 1.05rem;
+    color: var(--grey-text);
+    margin: 0 0 24px;
+    max-width: 680px;
+  }
+
+  p {
+    font-size: 1.05rem;
+    color: var(--ink);
+    max-width: 680px;
+  }
+
+  p.lede {
+    font-size: 1.15rem;
+  }
+
+  section.block ul {
+    max-width: 720px;
+    padding-left: 20px;
+    margin: 20px 0;
+  }
+
+  section.block ul li {
+    font-size: 1.02rem;
+    margin-bottom: 14px;
+  }
+
+  section.block ul li strong {
+    color: var(--navy-dark);
+  }
+
+  .embed-frame {
+    background: var(--bg-offwhite);
+    border: 1px solid var(--grey-line);
+    border-radius: 4px;
+    padding: 4px;
+    margin: 24px 0;
+  }
+
+  .embed-frame .placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 420px;
+    color: var(--grey-text);
+    font-style: italic;
+    text-align: center;
+    padding: 24px;
+    font-size: 0.95rem;
+  }
+
+  .flourish-embed {
+    width: 100%;
+  }
+
+  .callout {
+    background: var(--bg-offwhite);
+    border-left: 4px solid var(--orange);
+    padding: 18px 22px;
+    margin: 28px 0;
+    max-width: 680px;
+  }
+
+  .callout p {
+    margin: 0;
+    font-size: 1rem;
+  }
+
+  .stat-row {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+    margin: 28px 0;
+  }
+
+  .stat {
+    min-width: 160px;
+  }
+
+  .stat .value {
+    font-size: 2.1rem;
+    font-weight: 900;
+    color: var(--navy);
+    line-height: 1;
+  }
+
+  .stat .label {
+    font-size: 0.85rem;
+    color: var(--grey-text);
+    margin-top: 6px;
+  }
+
+  footer.site-footer {
+    background: var(--bg-offwhite);
+    border-top: 1px solid var(--grey-line);
+    margin-top: 24px;
+    padding: 40px 24px 56px;
+  }
+
+  footer.site-footer .footer-inner {
+    max-width: 1140px;
+    margin: 0 auto;
+  }
+
+  footer.site-footer h3 {
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--navy-dark);
+    margin: 0 0 12px;
+  }
+
+  footer.site-footer p, footer.site-footer li {
+    font-size: 0.9rem;
+    color: var(--grey-text);
+  }
+
+  footer.site-footer a {
+    color: var(--navy);
+  }
+
+  footer.site-footer ul {
+    padding-left: 18px;
+    margin: 8px 0 24px;
+  }
+
+  @media (max-width: 640px) {
+    h1 { font-size: 1.8rem; }
+    .hero { padding: 36px 0 24px; }
+    section.block { padding: 32px 0; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <img src="assets/ACLED-Logo-White.png" alt="ACLED">
+  <span class="kicker">Data Story · United States</span>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div class="kicker">Visualization &amp; Analysis</div>
+    <h1>The Data Center Backlash Is Not Where You'd Expect</h1>
+    <p class="dek">Across the United States, protests against data center construction have surged since late 2025. But the places seeing the most resistance are not the industry's biggest hubs, they're the newest ones.</p>
+    <p class="byline">Analysis of ACLED event data, January 2024 &ndash; August 2026, cross-referenced with US Data Center Map (dcmap.us).</p>
+    <p class="byline">Produced as a technical exercise for an ACLED hiring process. Not an official ACLED publication.</p>
+  </section>
+
+  <section class="block">
+    <!-- Flourish embed: state ratio map (flourish_states_with_data.geojson) -->
+    <div class="embed-frame">
+      <div class="flourish-embed flourish-map" data-src="visualisation/30211467"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/30211467/thumbnail" width="100%" alt="map visualization" /></noscript></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <!-- Flourish embed: bubble timeline (bubble_timeline_national.csv) -->
+    <div class="embed-frame">
+      <div class="flourish-embed flourish-scatter" data-src="visualisation/30212519"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/30212519/thumbnail" width="100%" alt="scatter visualization" /></noscript></div>
+    </div>
+
+    <p>Read individually, most of these protests are small and local, easy to miss on their own. Together, they trace a curve that mirrors the industry's own growth, and by mid-2026, starts to outpace it.</p>
+  </section>
+
+  <section class="block">
+    <h2>What People Are Protesting</h2>
+    <p>Water and electricity dominate the concerns cited in protest reports, not abstract opposition to artificial intelligence. Residents cite strain on local water supplies and aquifers, rising electricity costs tied to grid demand, and a lack of public consultation before projects are approved. The movement is overwhelmingly peaceful: 98% of data center protests are coded as peaceful demonstrations, a markedly lower rate of unrest than other contentious topics in the same period, such as immigration enforcement or Israel-Palestine.</p>
+  </section>
+
+  <section class="block">
+    <h2>How This Analysis Was Built</h2>
+    <p>The exercise offered a choice between a US and a Sahel dataset. US data centers were chosen: the pattern had to be extracted from free-text event notes rather than a structured field, and no single obvious storyline was already dominating press coverage the way an angle like immigration enforcement was.</p>
+    <ul>
+      <li><strong>Denominator, revised twice.</strong> An initial state-by-state count of existing data centers (IM3/PNNL, derived from OpenStreetMap) turned out to undercount fast-growing markets like Indiana by an order of magnitude. A second source (FracTracker) fixed that but had its own coverage gaps, missing large, uncontested facilities in states like Florida. dcmap.us, a monthly-updated aggregator with full state coverage, was used for the final figures.</li>
+      <li><strong>Confounds tested, not assumed away.</strong> State population, water-stress category, and proximity to cities were each checked against the ratio and found not to explain it (population correlation: &minus;0.18).</li>
+      <li><strong>Robustness checks.</strong> The Indiana/Virginia pattern holds when the denominator is switched to planned projects, to operational+planned combined, and when protests are weighted by estimated crowd size instead of counted as one event each.</li>
+      <li><strong>One angle set aside.</strong> A very strong, well-documented pattern around immigration-enforcement protests (Operation Metro Surge, Minnesota) was found in the same dataset but not pursued: it was already extensively covered by national press, and the data center pattern better demonstrated finding a signal that wasn't already public knowledge.</li>
+    </ul>
+    <p>Full exploration log, scripts, and intermediate data are available in the project repository.</p>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <h3>Sources &amp; Methodology</h3>
+    <ul>
+      <li><strong>ACLED</strong> &mdash; event data, United States, January 2024&ndash;August 2026. <a href="https://acleddata.com" target="_blank" rel="noopener">acleddata.com</a></li>
+      <li><strong>US Data Center Map</strong> (dcmap.us) &mdash; state-level aggregate counts of operational, planned and under-construction data centers, as of 2026-08-31. <a href="https://dcmap.us" target="_blank" rel="noopener">dcmap.us</a></li>
+    </ul>
+    <p>Data center protests were identified by keyword match on ACLED event notes ("data center" / "data centre"), since topic is not captured in a structured field. Turnout is estimated from ACLED's coded crowd-size tags; events with no reported size default to "small" per ACLED methodology. dcmap.us figures shown are derived aggregates, not a republished database, per dcmap.us usage policy.</p>
+  </div>
+</footer>
+
+</body>
+</html>
