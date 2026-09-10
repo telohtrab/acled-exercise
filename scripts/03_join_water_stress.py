@@ -27,7 +27,7 @@ for feat in gj["features"]:
     polys.append(geom)
     props.append(feat["properties"])
 
-tree = STRtree(polys)
+tree = STRtree(polys)  # spatial index; a linear scan over 3,433 basins per point would be too slow
 
 
 def lookup(lat, lon):

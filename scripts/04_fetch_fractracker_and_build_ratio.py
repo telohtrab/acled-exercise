@@ -33,6 +33,8 @@ ABBR_TO_NAME = {
 
 
 def fetch_all():
+    # ArcGIS FeatureServer paginates regardless of resultRecordCount, so loop
+    # on resultOffset until an empty page confirms we've reached the end.
     all_features, offset = [], 0
     while True:
         params = {
@@ -66,6 +68,9 @@ merged = pd.concat([protest_by_state, by_state_operating], axis=1).fillna(0)
 merged["operating_dc_count"] = merged["operating_dc_count"].astype(int)
 merged["protest_count"] = merged["protest_count"].astype(int)
 merged["ratio"] = (merged["protest_count"] / merged["operating_dc_count"].replace(0, np.nan)).round(2)
+# Note: this ratio was later replaced by the dcmap.us version (fuller state
+# coverage, see specs/exploration-log.md); the community_pushback rate below
+# remains part of the final cross-validation.
 merged = merged.sort_values("protest_count", ascending=False)
 merged.to_csv("output/state_summary_v3_fractracker.csv")
 

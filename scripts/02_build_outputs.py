@@ -15,6 +15,9 @@ Outputs:
 """
 import pandas as pd
 
+# Note: this was the first-pass pipeline (tax-incentive angle). Superseded by
+# scripts/04_fetch_fractracker_and_build_ratio.py and the dcmap.us cross-reference
+# once the incentive-tier data proved a poor fit — kept for the exploration trail.
 events = pd.read_csv("data/source/us_data_center_protests.csv")
 tiers = pd.read_csv("data/source/state_incentive_tier.csv")
 
